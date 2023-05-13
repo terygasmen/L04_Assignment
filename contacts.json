@@ -1,0 +1,69 @@
+{
+  "User": {
+    "name": "Tery Gasmen",
+    "brand/company": "Tery Gasmen",
+    "bio": "This is my bio...",
+    "social media": {
+      "Facebook": {
+        "user handle": "Tery Gasmen",
+        "link title": "Tery's Facebook",
+        "website": "facebook.com",
+        "url": "facebook.com/terygasmen"
+      },
+      "Instagram": {
+        "user handle": "Tery Gasmen",
+        "link title": "Tery's Instagram",
+        "website": "instagram.com",
+        "url": "instagram.com/terygasmen"
+      },
+      "Twitter": {
+        "user handle": "Tery Gasmen",
+        "link title": "Tery's Twitter",
+        "website": "twitter.com",
+        "url": "twitter.com/terygasmen"
+      },
+      "LinkedIn": {
+        "user handle": "Tery Gasmen",
+        "link title": "Tery's Linkedin",
+        "website": "linkedin.com",
+        "url": "linkedin.com/terygasmen"
+      },
+      "Youtube": {
+        "user handle": "Tery Gasmen",
+        "link title": "Tery's Youtube",
+        "website": "youtube.com",
+        "url": "youtube.com/terygasmen"
+      },
+      "Pinterest": {
+        "user handle": "Tery Gasmen",
+        "link title": "Tery's Pinterest",
+        "website": "pinterest.com",
+        "url": "pinterest.com/terygasmen"
+      },
+      "Snapchat": {
+        "user handle": "Tery Gasmen",
+        "link title": "Tery's Snapchat",
+        "website": "snapchat.com",
+        "url": "snapchat.com/terygasmen"
+      },
+      "Tiktok": {
+        "user handle": "Tery Gasmen",
+        "link title": "Tery's Tiktok",
+        "website": "tiktok.com",
+        "url": "tiktok.com/terygasmen"
+      },
+      "Reddit": {
+        "user handle": "Tery Gasmen",
+        "link title": "Tery's Reddit",
+        "website": "reddit.com",
+        "url": "reddit.com/terygasmen"
+      },
+      "WhatsApp": {
+        "user handle": "Tery Gasmen",
+        "link title": "Tery's Whatsapp",
+        "website": "whatsapp.com",
+        "url": "whatsapp.com/terygasmen"
+      }
+    }
+  }
+}

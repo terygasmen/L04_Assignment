@@ -20,11 +20,71 @@ const getSingle = async (req, res) => {
 
 const createContact = async (req, res) => {
   const contact = {
-    firstName: req.body.firstName,
-    lastName: req.body.lastName,
-    email: req.body.email,
-    favoriteColor: req.body.favoriteColor,
-    birthday: req.body.birthday
+    name: req.body.name,
+    bio: req.body.bio,
+    brand: req.body.brand,
+    social_media: {
+      Facebook: {
+        user_handle: req.body.user_handle,
+        link_title: req.body.link_title,
+        website: req.body.website,
+        url: req.body.url
+      },
+      Instagram: {
+        user_handle: req.body.user_handle,
+        link_title: req.body.link_title,
+        website: req.body.website,
+        url: req.body.url
+      },
+      Twitter: {
+        user_handle: req.body.user_handle,
+        link_title: req.body.link_title,
+        website: req.body.website,
+        url: req.body.url
+      },
+      LinkedIn: {
+        user_handle: req.body.user_handle,
+        link_title: req.body.link_title,
+        website: req.body.website,
+        url: req.body.url
+      },
+      Youtube: {
+        user_handle: req.body.user_handle,
+        link_title: req.body.link_title,
+        website: req.body.website,
+        url: req.body.url
+      },
+      Pinterest: {
+        user_handle: req.body.user_handle,
+        link_title: req.body.link_title,
+        website: req.body.website,
+        url: req.body.url
+      },
+      Snapchat: {
+        user_handle: req.body.user_handle,
+        link_title: req.body.link_title,
+        website: req.body.website,
+        url: req.body.url
+      },
+      Tiktok: {
+        user_handle: req.body.user_handle,
+        link_title: req.body.link_title,
+        website: req.body.website,
+        url: req.body.url
+      },
+      Reddit: {
+        user_handle: req.body.user_handle,
+        link_title: req.body.link_title,
+        website: req.body.website,
+        url: req.body.url
+      },
+      WhatsApp: {
+        user_handle: req.body.user_handle,
+        link_title: req.body.link_title,
+        website: req.body.website,
+        url: req.body.url
+      }
+    }
   };
   const response = await mongodb.getDb().db().collection('contacts').insertOne(contact);
   if (response.acknowledged) {
@@ -38,11 +98,71 @@ const updateContact = async (req, res) => {
   const userId = new ObjectId(req.params.id);
   // be aware of updateOne if you only want to update specific fields
   const contact = {
-    firstName: req.body.firstName,
-    lastName: req.body.lastName,
-    email: req.body.email,
-    favoriteColor: req.body.favoriteColor,
-    birthday: req.body.birthday
+    name: req.body.name,
+    bio: req.body.bio,
+    brand: req.body.brand,
+    social_media: {
+      Facebook: {
+        user_handle: req.body.user_handle,
+        link_title: req.body.link_title,
+        website: req.body.website,
+        url: req.body.url
+      },
+      Instagram: {
+        user_handle: req.body.user_handle,
+        link_title: req.body.link_title,
+        website: req.body.website,
+        url: req.body.url
+      },
+      Twitter: {
+        user_handle: req.body.user_handle,
+        link_title: req.body.link_title,
+        website: req.body.website,
+        url: req.body.url
+      },
+      LinkedIn: {
+        user_handle: req.body.user_handle,
+        link_title: req.body.link_title,
+        website: req.body.website,
+        url: req.body.url
+      },
+      Youtube: {
+        user_handle: req.body.user_handle,
+        link_title: req.body.link_title,
+        website: req.body.website,
+        url: req.body.url
+      },
+      Pinterest: {
+        user_handle: req.body.user_handle,
+        link_title: req.body.link_title,
+        website: req.body.website,
+        url: req.body.url
+      },
+      Snapchat: {
+        user_handle: req.body.user_handle,
+        link_title: req.body.link_title,
+        website: req.body.website,
+        url: req.body.url
+      },
+      Tiktok: {
+        user_handle: req.body.user_handle,
+        link_title: req.body.link_title,
+        website: req.body.website,
+        url: req.body.url
+      },
+      Reddit: {
+        user_handle: req.body.user_handle,
+        link_title: req.body.link_title,
+        website: req.body.website,
+        url: req.body.url
+      },
+      WhatsApp: {
+        user_handle: req.body.user_handle,
+        link_title: req.body.link_title,
+        website: req.body.website,
+        url: req.body.url
+      }
+    }
   };
   const response = await mongodb
     .getDb()
@@ -59,7 +179,11 @@ const updateContact = async (req, res) => {
 
 const deleteContact = async (req, res) => {
   const userId = new ObjectId(req.params.id);
-  const response = await mongodb.getDb().db().collection('contacts').deleteOne({ _id: userId }, true);
+  const response = await mongodb
+    .getDb()
+    .db()
+    .collection('contacts')
+    .deleteOne({ _id: userId }, true);
   console.log(response);
   if (response.deletedCount > 0) {
     res.status(204).send();

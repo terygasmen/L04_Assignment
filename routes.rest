@@ -4,7 +4,7 @@ GET http://localhost:8080/contacts
 
 
 ### Get contact by id
-GET http://localhost:8080/contacts/6448a20cc620823de017dd9e
+GET http://localhost:8080/contacts/6453736e258f4fc55ce7c61c
 
 
 ### Create contact
@@ -12,11 +12,71 @@ POST http://localhost:8080/contacts HTTP/1.1
 content-type: application/json
 
 {
-    "firstName":"Willy",
-    "lastName":"Gasmen",
-    "email":"willygasmen@test.com",
-    "favoriteColor":"Brown",
-    "birthday":"10/12/1969"
+    "name": "Pamela Gasmen",
+    "bio": "This is my bio...",
+    "brand": "Pamela Gasmen",
+    "social_media": {
+      "Facebook": {
+        "user_handle": "Pamela Gasmen",
+        "link_title": "Pamela's Facebook",
+        "website": "facebook.com",
+        "url": "facebook.com/pamelagasmen"
+      },
+      "Instagram": {
+        "user_handle": "Pamela Gasmen",
+        "link_title": "Pamela's Instagram",
+        "website": "instagram.com",
+        "url": "instagram.com/pamelagasmen"
+      },
+      "Twitter": {
+        "user_handle": "Pamela Gasmen",
+        "link_title": "Pamela's Twitter",
+        "website": "twitter.com",
+        "url": "twitter.com/pamelagasmen"
+      },
+      "LinkedIn": {
+        "user_handle": "Pamela Gasmen",
+        "link_title": "Pamela's Linkedin",
+        "website": "linkedin.com",
+        "url": "linkedin.com/pamelagasmen"
+      },
+      "Youtube": {
+        "user_handle": "Pamela Gasmen",
+        "link_title": "Pamela's Youtube",
+        "website": "youtube.com",
+        "url": "youtube.com/pamelagasmen"
+      },
+      "Pinterest": {
+        "user_handle": "Pamela Gasmen",
+        "link_title": "Pamela's Pinterest",
+        "website": "pinterest.com",
+        "url": "pinterest.com/pamelagasmen"
+      },
+      "Snapchat": {
+        "user_handle": "Pamela Gasmen",
+        "link_title": "Pamela's Snapchat",
+        "website": "snapchat.com",
+        "url": "snapchat.com/pamelagasmen"
+      },
+      "Tiktok": {
+        "user_handle": "Pamela Gasmen",
+        "link_title": "Pamela's Tiktok",
+        "website": "tiktok.com",
+        "url": "tiktok.com/pamelagasmen"
+      },
+      "Reddit": {
+        "user_handle": "Pamela Gasmen",
+        "link_title": "Pamela's Reddit",
+        "website": "reddit.com",
+        "url": "reddit.com/pamelagasmen"
+      },
+      "WhatsApp": {
+        "user_handle": "Pamela Gasmen",
+        "link_title": "Pamela's Whatsapp",
+        "website": "whatsapp.com",
+        "url": "whatsapp.com/pamelagasmen"
+      }
+    }
 }
 
 
@@ -25,14 +85,76 @@ PUT http://localhost:8080/contacts/6220bcb39cd507e920c75a0b HTTP/1.1
 content-type: application/json
 
 {
-    "firstName":"Tery",
-    "lastName":"Gasmen",
-    "email":"terygasmen@test.com",
-    "favoriteColor":"Yellow",
-    "birthday":"02/12/2000"
+    "name": "Pamela Gasmen",
+    "bio": "This is my bio...",
+    "brand": "Pamela Gasmen",
+    "social_media": {
+      "Facebook": {
+        "user_handle": "Pamela Gasmen",
+        "link_title": "Pamela's Facebook",
+        "website": "facebook.com",
+        "url": "facebook.com/pamelagasmen"
+      },
+      "Instagram": {
+        "user_handle": "Pamela Gasmen",
+        "link_title": "Pamela's Instagram",
+        "website": "instagram.com",
+        "url": "instagram.com/pamelagasmen"
+      },
+      "Twitter": {
+        "user_handle": "Pamela Gasmen",
+        "link_title": "Pamela's Twitter",
+        "website": "twitter.com",
+        "url": "twitter.com/pamelagasmen"
+      },
+      "LinkedIn": {
+        "user_handle": "Pamela Gasmen",
+        "link_title": "Pamela's Linkedin",
+        "website": "linkedin.com",
+        "url": "linkedin.com/pamelagasmen"
+      },
+      "Youtube": {
+        "user_handle": "Pamela Gasmen",
+        "link_title": "Pamela's Youtube",
+        "website": "youtube.com",
+        "url": "youtube.com/pamelagasmen"
+      },
+      "Pinterest": {
+        "user_handle": "Pamela Gasmen",
+        "link_title": "Pamela's Pinterest",
+        "website": "pinterest.com",
+        "url": "pinterest.com/pamelagasmen"
+      },
+      "Snapchat": {
+        "user_handle": "Pamela Gasmen",
+        "link_title": "Pamela's Snapchat",
+        "website": "snapchat.com",
+        "url": "snapchat.com/pamelagasmen"
+      },
+      "Tiktok": {
+        "user_handle": "Pamela Gasmen",
+        "link_title": "Pamela's Tiktok",
+        "website": "tiktok.com",
+        "url": "tiktok.com/pamelagasmen"
+      },
+      "Reddit": {
+        "user_handle": "Pamela Gasmen",
+        "link_title": "Pamela's Reddit",
+        "website": "reddit.com",
+        "url": "reddit.com/pamelagasmen"
+      },
+      "WhatsApp": {
+        "user_handle": "Pamela Gasmen",
+        "link_title": "Pamela's Whatsapp",
+        "website": "whatsapp.com",
+        "url": "whatsapp.com/pamelagasmen"
+      }
+    }
 }
 ### DELETE contact
-DELETE http://localhost:8080/contacts/644d280a15b130b698e3640a HTTP/1.1
+DELETE http://localhost:8080/contacts/6451efe909a4188ab3cfd01d HTTP/1.1
+
+
 
 // PRODUCTION Deploy
 ### Get all contacts
@@ -40,7 +162,7 @@ GET http://localhost:8080/contacts
 
 
 ### Get contact by id
-GET http://localhost:8080/contacts/622023f642f9ab4cd6e060b3
+GET http://localhost:8080/contacts/6453736e258f4fc55ce7c61c
 
 
 ### Create contact
@@ -48,11 +170,71 @@ POST http://localhost:8080/contacts HTTP/1.1
 content-type: application/json
 
 {
-    "firstName":"Willy",
-    "lastName":"Gasmen",
-    "email":"willygasmen@test.com",
-    "favoriteColor":"Brown",
-    "birthday":"10/12/1969"
+    "name": "Pamela Gasmen",
+    "bio": "This is my bio...",
+    "brand": "Pamela Gasmen",
+    "social_media": {
+      "Facebook": {
+        "user_handle": "Pamela Gasmen",
+        "link_title": "Pamela's Facebook",
+        "website": "facebook.com",
+        "url": "facebook.com/pamelagasmen"
+      },
+      "Instagram": {
+        "user_handle": "Pamela Gasmen",
+        "link_title": "Pamela's Instagram",
+        "website": "instagram.com",
+        "url": "instagram.com/pamelagasmen"
+      },
+      "Twitter": {
+        "user_handle": "Pamela Gasmen",
+        "link_title": "Pamela's Twitter",
+        "website": "twitter.com",
+        "url": "twitter.com/pamelagasmen"
+      },
+      "LinkedIn": {
+        "user_handle": "Pamela Gasmen",
+        "link_title": "Pamela's Linkedin",
+        "website": "linkedin.com",
+        "url": "linkedin.com/pamelagasmen"
+      },
+      "Youtube": {
+        "user_handle": "Pamela Gasmen",
+        "link_title": "Pamela's Youtube",
+        "website": "youtube.com",
+        "url": "youtube.com/pamelagasmen"
+      },
+      "Pinterest": {
+        "user_handle": "Pamela Gasmen",
+        "link_title": "Pamela's Pinterest",
+        "website": "pinterest.com",
+        "url": "pinterest.com/pamelagasmen"
+      },
+      "Snapchat": {
+        "user_handle": "Pamela Gasmen",
+        "link_title": "Pamela's Snapchat",
+        "website": "snapchat.com",
+        "url": "snapchat.com/pamelagasmen"
+      },
+      "Tiktok": {
+        "user_handle": "Pamela Gasmen",
+        "link_title": "Pamela's Tiktok",
+        "website": "tiktok.com",
+        "url": "tiktok.com/pamelagasmen"
+      },
+      "Reddit": {
+        "user_handle": "Pamela Gasmen",
+        "link_title": "Pamela's Reddit",
+        "website": "reddit.com",
+        "url": "reddit.com/pamelagasmen"
+      },
+      "WhatsApp": {
+        "user_handle": "Pamela Gasmen",
+        "link_title": "Pamela's Whatsapp",
+        "website": "whatsapp.com",
+        "url": "whatsapp.com/pamelagasmen"
+      }
+    }
 }
 
 
@@ -61,13 +243,71 @@ PUT http://localhost:8080/contacts/6220bcb39cd507e920c75a0b HTTP/1.1
 content-type: application/json
 
 {
-    "firstName":"Tery",
-    "lastName":"Gasmen",
-    "email":"terygasmen@test.com",
-    "favoriteColor":"Yellow",
-    "birthday":"02/12/2000"
+    "name": "Pamela Gasmen",
+    "bio": "This is my bio...",
+    "brand": "Pamela Gasmen",
+    "social_media": {
+      "Facebook": {
+        "user_handle": "Pamela Gasmen",
+        "link_title": "Pamela's Facebook",
+        "website": "facebook.com",
+        "url": "facebook.com/pamelagasmen"
+      },
+      "Instagram": {
+        "user_handle": "Pamela Gasmen",
+        "link_title": "Pamela's Instagram",
+        "website": "instagram.com",
+        "url": "instagram.com/pamelagasmen"
+      },
+      "Twitter": {
+        "user_handle": "Pamela Gasmen",
+        "link_title": "Pamela's Twitter",
+        "website": "twitter.com",
+        "url": "twitter.com/pamelagasmen"
+      },
+      "LinkedIn": {
+        "user_handle": "Pamela Gasmen",
+        "link_title": "Pamela's Linkedin",
+        "website": "linkedin.com",
+        "url": "linkedin.com/pamelagasmen"
+      },
+      "Youtube": {
+        "user_handle": "Pamela Gasmen",
+        "link_title": "Pamela's Youtube",
+        "website": "youtube.com",
+        "url": "youtube.com/pamelagasmen"
+      },
+      "Pinterest": {
+        "user_handle": "Pamela Gasmen",
+        "link_title": "Pamela's Pinterest",
+        "website": "pinterest.com",
+        "url": "pinterest.com/pamelagasmen"
+      },
+      "Snapchat": {
+        "user_handle": "Pamela Gasmen",
+        "link_title": "Pamela's Snapchat",
+        "website": "snapchat.com",
+        "url": "snapchat.com/pamelagasmen"
+      },
+      "Tiktok": {
+        "user_handle": "Pamela Gasmen",
+        "link_title": "Pamela's Tiktok",
+        "website": "tiktok.com",
+        "url": "tiktok.com/pamelagasmen"
+      },
+      "Reddit": {
+        "user_handle": "Pamela Gasmen",
+        "link_title": "Pamela's Reddit",
+        "website": "reddit.com",
+        "url": "reddit.com/pamelagasmen"
+      },
+      "WhatsApp": {
+        "user_handle": "Pamela Gasmen",
+        "link_title": "Pamela's Whatsapp",
+        "website": "whatsapp.com",
+        "url": "whatsapp.com/pamelagasmen"
+      }
+    }
 }
-
-
 ### DELETE contact
-DELETE http://localhost:8080/contacts/6220e34083149913680f9a64 HTTP/1.1
+DELETE http://localhost:8080/contacts/6451efe909a4188ab3cfd01d HTTP/1.1
