@@ -81,80 +81,80 @@ content-type: application/json
 
 
 ### PUT contact
-PUT http://localhost:8080/contacts/6220bcb39cd507e920c75a0b HTTP/1.1
+PUT http://localhost:8080/contacts/6464e3943c8304eccf712aa5 HTTP/1.1
 content-type: application/json
 
 {
-    "name": "Pamela Gasmen",
+    "name": "Wilfredo Gasmen",
     "bio": "This is my bio...",
-    "brand": "Pamela Gasmen",
+    "brand": "Wilfredo Gasmen",
     "social_media": {
       "Facebook": {
-        "user_handle": "Pamela Gasmen",
-        "link_title": "Pamela's Facebook",
+        "user_handle": "Wilfredo Gasmen",
+        "link_title": "Wilfredo's Facebook",
         "website": "facebook.com",
-        "url": "facebook.com/pamelagasmen"
+        "url": "facebook.com/willygasmen"
       },
       "Instagram": {
-        "user_handle": "Pamela Gasmen",
-        "link_title": "Pamela's Instagram",
+        "user_handle": "Wilfredo Gasmen",
+        "link_title": "Willy's Instagram",
         "website": "instagram.com",
-        "url": "instagram.com/pamelagasmen"
+        "url": "instagram.com/willygasmen"
       },
       "Twitter": {
-        "user_handle": "Pamela Gasmen",
-        "link_title": "Pamela's Twitter",
+        "user_handle": "Wilfredo Gasmen",
+        "link_title": "Willy's Twitter",
         "website": "twitter.com",
-        "url": "twitter.com/pamelagasmen"
+        "url": "twitter.com/willygasmen"
       },
       "LinkedIn": {
-        "user_handle": "Pamela Gasmen",
-        "link_title": "Pamela's Linkedin",
+        "user_handle": "Wilfredo Gasmen",
+        "link_title": "Willy's Linkedin",
         "website": "linkedin.com",
-        "url": "linkedin.com/pamelagasmen"
+        "url": "linkedin.com/willygasmen"
       },
       "Youtube": {
-        "user_handle": "Pamela Gasmen",
-        "link_title": "Pamela's Youtube",
+        "user_handle": "Wilfredo Gasmen",
+        "link_title": "Willy's Youtube",
         "website": "youtube.com",
-        "url": "youtube.com/pamelagasmen"
+        "url": "youtube.com/willygasmen"
       },
       "Pinterest": {
-        "user_handle": "Pamela Gasmen",
-        "link_title": "Pamela's Pinterest",
+        "user_handle": "Wilfredo Gasmen",
+        "link_title": "Willy's Pinterest",
         "website": "pinterest.com",
-        "url": "pinterest.com/pamelagasmen"
+        "url": "pinterest.com/willygasmen"
       },
       "Snapchat": {
-        "user_handle": "Pamela Gasmen",
-        "link_title": "Pamela's Snapchat",
+        "user_handle": "Wilfredo Gasmen",
+        "link_title": "Willy's Snapchat",
         "website": "snapchat.com",
-        "url": "snapchat.com/pamelagasmen"
+        "url": "snapchat.com/willygasmen"
       },
       "Tiktok": {
-        "user_handle": "Pamela Gasmen",
-        "link_title": "Pamela's Tiktok",
+        "user_handle": "Wilfredo Gasmen",
+        "link_title": "Willy's Tiktok",
         "website": "tiktok.com",
-        "url": "tiktok.com/pamelagasmen"
+        "url": "tiktok.com/willygasmen"
       },
       "Reddit": {
-        "user_handle": "Pamela Gasmen",
-        "link_title": "Pamela's Reddit",
+        "user_handle": "Wilfredo Gasmen",
+        "link_title": "Willy's Reddit",
         "website": "reddit.com",
-        "url": "reddit.com/pamelagasmen"
+        "url": "reddit.com/willygasmen"
       },
       "WhatsApp": {
-        "user_handle": "Pamela Gasmen",
-        "link_title": "Pamela's Whatsapp",
+        "user_handle": "Wilfredo Gasmen",
+        "link_title": "Willy's Whatsapp",
         "website": "whatsapp.com",
-        "url": "whatsapp.com/pamelagasmen"
+        "url": "whatsapp.com/willygasmen"
       }
     }
 }
 ### DELETE contact
-DELETE http://localhost:8080/contacts/6451efe909a4188ab3cfd01d HTTP/1.1
+DELETE http://localhost:8080/contacts/6464dd263c8304eccf712aa4 HTTP/1.1
 
-
+//////////////////////////////////////////////////////////////////////////
 
 // PRODUCTION Deploy
 ### Get all contacts

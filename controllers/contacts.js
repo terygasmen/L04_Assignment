@@ -19,73 +19,142 @@ const getSingle = async (req, res) => {
 };
 
 const createContact = async (req, res) => {
-  const contact = {
-    name: req.body.name,
-    bio: req.body.bio,
-    brand: req.body.brand,
+  const {
+    name,
+    bio,
+    brand,
     social_media: {
       Facebook: {
-        user_handle: req.body.user_handle,
-        link_title: req.body.link_title,
-        website: req.body.website,
-        url: req.body.url
+        user_handle: facebook_user_handle,
+        link_title: facebook_link_title,
+        website: facebook_website,
+        url: facebook_url
       },
       Instagram: {
-        user_handle: req.body.user_handle,
-        link_title: req.body.link_title,
-        website: req.body.website,
-        url: req.body.url
+        user_handle: instagram_user_handle,
+        link_title: instagram_link_title,
+        website: instagram_website,
+        url: instagram_url
       },
       Twitter: {
-        user_handle: req.body.user_handle,
-        link_title: req.body.link_title,
-        website: req.body.website,
-        url: req.body.url
+        user_handle: twitter_user_handle,
+        link_title: twitter_link_title,
+        website: twitter_website,
+        url: twitter_url
       },
       LinkedIn: {
-        user_handle: req.body.user_handle,
-        link_title: req.body.link_title,
-        website: req.body.website,
-        url: req.body.url
+        user_handle: linkedin_user_handle,
+        link_title: linkedin_link_title,
+        website: linkedin_website,
+        url: linkedin_url
       },
       Youtube: {
-        user_handle: req.body.user_handle,
-        link_title: req.body.link_title,
-        website: req.body.website,
-        url: req.body.url
+        user_handle: youtube_user_handle,
+        link_title: youtube_link_title,
+        website: youtube_website,
+        url: youtube_url
       },
       Pinterest: {
-        user_handle: req.body.user_handle,
-        link_title: req.body.link_title,
-        website: req.body.website,
-        url: req.body.url
+        user_handle: pinterest_user_handle,
+        link_title: pinterest_link_title,
+        website: pinterest_website,
+        url: pinterest_url
       },
       Snapchat: {
-        user_handle: req.body.user_handle,
-        link_title: req.body.link_title,
-        website: req.body.website,
-        url: req.body.url
+        user_handle: snapchat_user_handle,
+        link_title: snapchat_link_title,
+        website: snapchat_website,
+        url: snapchat_url
       },
       Tiktok: {
-        user_handle: req.body.user_handle,
-        link_title: req.body.link_title,
-        website: req.body.website,
-        url: req.body.url
+        user_handle: tiktok_user_handle,
+        link_title: tiktok_link_title,
+        website: tiktok_website,
+        url: tiktok_url
       },
       Reddit: {
-        user_handle: req.body.user_handle,
-        link_title: req.body.link_title,
-        website: req.body.website,
-        url: req.body.url
+        user_handle: reddit_user_handle,
+        link_title: reddit_link_title,
+        website: reddit_website,
+        url: reddit_url
       },
       WhatsApp: {
-        user_handle: req.body.user_handle,
-        link_title: req.body.link_title,
-        website: req.body.website,
-        url: req.body.url
+        user_handle: whatsapp_user_handle,
+        link_title: whatsapp_link_title,
+        website: whatsapp_website,
+        url: whatsapp_url
+      }
+    }
+  } = req.body;
+
+  const contact = {
+    name,
+    bio,
+    brand,
+    social_media: {
+      Facebook: {
+        user_handle: facebook_user_handle,
+        link_title: facebook_link_title,
+        website: facebook_website,
+        url: facebook_url
+      },
+      Instagram: {
+        user_handle: instagram_user_handle,
+        link_title: instagram_link_title,
+        website: instagram_website,
+        url: instagram_url
+      },
+      Twitter: {
+        user_handle: twitter_user_handle,
+        link_title: twitter_link_title,
+        website: twitter_website,
+        url: twitter_url
+      },
+      LinkedIn: {
+        user_handle: linkedin_user_handle,
+        link_title: linkedin_link_title,
+        website: linkedin_website,
+        url: linkedin_url
+      },
+      Youtube: {
+        user_handle: youtube_user_handle,
+        link_title: youtube_link_title,
+        website: youtube_website,
+        url: youtube_url
+      },
+      Pinterest: {
+        user_handle: pinterest_user_handle,
+        link_title: pinterest_link_title,
+        website: pinterest_website,
+        url: pinterest_url
+      },
+      Snapchat: {
+        user_handle: snapchat_user_handle,
+        link_title: snapchat_link_title,
+        website: snapchat_website,
+        url: snapchat_url
+      },
+      Tiktok: {
+        user_handle: tiktok_user_handle,
+        link_title: tiktok_link_title,
+        website: tiktok_website,
+        url: tiktok_url
+      },
+      Reddit: {
+        user_handle: reddit_user_handle,
+        link_title: reddit_link_title,
+        website: reddit_website,
+        url: reddit_url
+      },
+      WhatsApp: {
+        user_handle: whatsapp_user_handle,
+        link_title: whatsapp_link_title,
+        website: whatsapp_website,
+        url: whatsapp_url
       }
     }
   };
+
   const response = await mongodb.getDb().db().collection('contacts').insertOne(contact);
   if (response.acknowledged) {
     res.status(201).json(response);
@@ -93,89 +162,98 @@ const createContact = async (req, res) => {
     res.status(500).json(response.error || 'Some error occurred while creating the contact.');
   }
 };
-
+     
 const updateContact = async (req, res) => {
   const userId = new ObjectId(req.params.id);
-  // be aware of updateOne if you only want to update specific fields
+
+  // Validate the required fields
+  const requiredFields = ['name', 'bio', 'brand'];
+  const missingFields = requiredFields.filter(field => !(field in req.body));
+  if (missingFields.length > 0) {
+    return res.status(400).json({ error: `Missing required fields: ${missingFields.join(', ')}` });
+  }
+
   const contact = {
     name: req.body.name,
     bio: req.body.bio,
     brand: req.body.brand,
     social_media: {
       Facebook: {
-        user_handle: req.body.user_handle,
-        link_title: req.body.link_title,
-        website: req.body.website,
-        url: req.body.url
+        user_handle: req.body.facebook_user_handle,
+        link_title: req.body.facebook_link_title,
+        website: req.body.facebook_website,
+        url: req.body.facebook_url
       },
       Instagram: {
-        user_handle: req.body.user_handle,
-        link_title: req.body.link_title,
-        website: req.body.website,
-        url: req.body.url
+        user_handle: req.body.instagram_user_handle,
+        link_title: req.body.instagram_link_title,
+        website: req.body.instagram_website,
+        url: req.body.instagram_url
       },
       Twitter: {
-        user_handle: req.body.user_handle,
-        link_title: req.body.link_title,
-        website: req.body.website,
-        url: req.body.url
+        user_handle: req.body.twitter_user_handle,
+        link_title: req.body.twitter_link_title,
+        website: req.body.twitter_website,
+        url: req.body.twitter_url
       },
       LinkedIn: {
-        user_handle: req.body.user_handle,
-        link_title: req.body.link_title,
-        website: req.body.website,
-        url: req.body.url
+        user_handle: req.body.linkedin_user_handle,
+        link_title: req.body.linkedin_link_title,
+        website: req.body.linkedin_website,
+        url: req.body.linkedin_url
       },
       Youtube: {
-        user_handle: req.body.user_handle,
-        link_title: req.body.link_title,
-        website: req.body.website,
-        url: req.body.url
+        user_handle: req.body.youtube_user_handle,
+        link_title: req.body.youtube_link_title,
+        website: req.body.youtube_website,
+        url: req.body.youtube_url
       },
       Pinterest: {
-        user_handle: req.body.user_handle,
-        link_title: req.body.link_title,
-        website: req.body.website,
-        url: req.body.url
+        user_handle: req.body.pinterest_user_handle,
+        link_title: req.body.pinterest_link_title,
+        website: req.body.pinterest_website,
+        url: req.body.pinterest_url
       },
       Snapchat: {
-        user_handle: req.body.user_handle,
-        link_title: req.body.link_title,
-        website: req.body.website,
-        url: req.body.url
+        user_handle: req.body.snapchat_user_handle,
+        link_title: req.body.snapchat_link_title,
+        website: req.body.snapchat_website,
+        url: req.body.snapchat_url
       },
       Tiktok: {
-        user_handle: req.body.user_handle,
-        link_title: req.body.link_title,
-        website: req.body.website,
-        url: req.body.url
+        user_handle: req.body.tiktok_user_handle,
+        link_title: req.body.tiktok_link_title,
+        website: req.body.tiktok_website,
+        url: req.body.tiktok_url
       },
       Reddit: {
-        user_handle: req.body.user_handle,
-        link_title: req.body.link_title,
-        website: req.body.website,
-        url: req.body.url
+        user_handle: req.body.reddit_user_handle,
+        link_title: req.body.reddit_link_title,
+        website: req.body.reddit_website,
+        url: req.body.reddit_url
       },
       WhatsApp: {
-        user_handle: req.body.user_handle,
-        link_title: req.body.link_title,
-        website: req.body.website,
-        url: req.body.url
+        user_handle: req.body.whatsapp_user_handle,
+        link_title: req.body.whatsapp_link_title,
+        website: req.body.whatsapp_website,
+        url: req.body.whatsapp_url
       }
     }
   };
-  const response = await mongodb
-    .getDb()
-    .db()
-    .collection('contacts')
-    .replaceOne({ _id: userId }, contact);
-  console.log(response);
+
+  console.log('req.body:', req.body);
+  console.log('contact:', contact);
+
+  const response = await mongodb.getDb().db().collection('contacts').replaceOne({ _id: userId }, contact);
+  console.log('response:', response);
+
   if (response.modifiedCount > 0) {
     res.status(204).send();
   } else {
     res.status(500).json(response.error || 'Some error occurred while updating the contact.');
   }
 };
+
 
 const deleteContact = async (req, res) => {
   const userId = new ObjectId(req.params.id);
