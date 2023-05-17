@@ -188,6 +188,16 @@ const updateContact = async (req, res) => {
       return res.status(400).json({ error: `Missing required fields: ${missingFields.join(', ')}` });
     }
 
+    // Validate the fields that should be integers
+    const integerFields = ['facebook_user_handle', 'twitter_user_handle', 'instagram_user_handle', 'linkedin_user_handle', 'youtube_user_handle', 'pinterest_user_handle', 'snapchat_user_handle', 'tiktok_user_handle', 'reddit_user_handle', 'whatsapp_user_handle'];
+    const invalidIntegerFields = integerFields.filter(field => {
+      const value = req.body[field];
+      return value !== undefined && typeof value !== 'number' && isNaN(value);
+    });
+    if (invalidIntegerFields.length > 0) {
+      return res.status(400).json({ error: `Invalid integer fields: ${invalidIntegerFields.join(', ')}` });
+    }
+
     const contact = {
       name: req.body.name,
       bio: req.body.bio,

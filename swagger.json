@@ -301,7 +301,7 @@
           {
             "name": "id",
             "in": "path",
-            "type": "integer",
+            "type": "string",
             "required": true
           },
           {
